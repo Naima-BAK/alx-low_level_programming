@@ -2,17 +2,17 @@
 
 /**
  * print_last_digit - prints the last digit
- * @x: number
- * Return: value of last digit
+ * @x: integer
+ * Return: integer 
  */
-int print_last_digit(int a)
+int print_last_digit(int x)
 {
-int ld;
-ld = a % 10;
-if (ld < 0)
+int last_digit = x % 10;
+
+if (x < 0)
 {
-ld *= -1;
+last_digit = last_digit * -1;
 }
-_putchar(ld + 48);
-return (ld);
+_putchar(last_digit + '0');
+return (last_digit);
 }
