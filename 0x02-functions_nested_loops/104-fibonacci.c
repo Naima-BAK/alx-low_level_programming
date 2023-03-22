@@ -23,7 +23,7 @@ k2 = (m1 + m2) % max;
 k3 = n1 + n2 + k1;
 n1 = n2, n2 = k3;
 m1 = m2, m2 = k2;
-printf("%lu,%lu", n2, m2);
+printf("%lu%010lu", n2, m2);
 }
 else
 {
