@@ -19,14 +19,21 @@ if (argc != 2)
 printf("Error\n");
 return (0);
 }
+if (number < 0)
+{
+printf("0\n");
+return (0);
+}
+
 for (i = 0; i < 5 && number >= 0; i++)
 {
+
 while (number >= coins[i])
 {
 change++;
 number -= coins[i];
 }
-printf("%d\n", change);
 }
+printf("%d\n", change);
 return (0);
 }
