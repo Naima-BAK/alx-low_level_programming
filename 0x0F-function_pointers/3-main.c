@@ -24,7 +24,7 @@ num1 = atoi(argv[1]);
 num2 = atoi(argv[3]);
 operation_function = get_op_func(argv[2]);
 
-if (!operation_function)
+if (operation_function == NULL)
 {
 printf("Error\n");
 exit(98);
