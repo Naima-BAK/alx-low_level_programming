@@ -11,13 +11,14 @@ int i = 0;
 
 while (h)
 {
-if (h->str != NULL)
+if (h->str == NULL)
 {
-printf("[%d] %s\n", h->len, h->str);
+printf("[0] (nil)\n");
+/*printf("[%d] %s\n", h->len, h->str);*/
 }
 else
 {
-printf("[0] (nil)\n");
+printf("[%d] %s\n", h->len, h->str);
 }
 i++;
 h = h->next;
