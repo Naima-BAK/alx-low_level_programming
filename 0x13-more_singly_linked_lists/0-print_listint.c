@@ -13,7 +13,7 @@ while (h)
 {
 if (!h->n)
 {
-printf("0 (nil)\n");
+printf("0\n");
 }
 else
 {
