@@ -1,5 +1,22 @@
 #include "main.h"
 
+void close_file(int cf, int file);
+
+/**
+ * close_file - Closes files.
+ * @cf: if = to -1.
+ * @file: The file.
+ * Return: void;
+ */
+void close_file(int cf, int file)
+{
+if (cf == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
+exit(100);
+}
+}
+
 /**
  * main - Copy the content of a file1 to file2.
  * @argc: The number of arguments.
@@ -10,7 +27,7 @@
 
 int main(int argc, char *argv[])
 {
-int num_bytes_to_read, num_bytes_to_write, file_from, file_to;
+int close_to, close_from, num_bytes_to_read, num_bytes_to_write, file_from, file_to;
 char buffer[BUFFER_SIZE];
 mode_t mode_T = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 if (argc != 3)
@@ -49,10 +66,9 @@ if (close(file_from) == -1)
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 return (100);
 }
-if (close(file_to) == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
-return (100);
-}
+close_to = close(file_to);
+close_from = close(file_from);
+close_file(close_to, file_to);
+close_file(close_from, file_from);
 return (0);
 }
